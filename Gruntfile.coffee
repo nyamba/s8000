@@ -20,7 +20,7 @@ module.exports = (grunt) ->
         files: [
           expand: true,
           cwd:    pd+'jade',
-          src:    ['*.jade']
+          src:    ['*.jade', '!_*.jade']
           dest:   pd+'app'
           ext:     '.html'
         ]

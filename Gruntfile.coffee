@@ -1,6 +1,6 @@
 module.exports = (grunt) ->
+  pd = global.p_dir + '/'
   grunt.initConfig
-    pkg: grunt.file.readJSON('package.json'),
     sass:
       dist:
         options:
@@ -8,35 +8,36 @@ module.exports = (grunt) ->
           noCache: true
         files: [
           expand: true,
-          cwd:    'sass',
+          cwd:    pd+'sass',
           src:    ['*.sass']
-          dest:   'app/css'
+          dest:   pd+'app/css'
           ext:    '.css'
         ]
     jade:
       compile:
-        options:
+        options :
           pretty: true
         files: [
           expand: true,
-          cwd:    'jade',
+          cwd:    pd+'jade',
           src:    ['*.jade']
-          dest:   'app/'
-          ext:    '.html'
+          dest:   pd+'app'
+          ext:     '.html'
         ]
     connect:
       server:
         options:
           livereload: true
-          base: ['app']
+          base: [pd+'app']
     watch:
       options:
         livereload: true
+        spawn: false
       html:
-        files: ['jade/*.jade']
+        files: [pd+'jade/*.jade']
         tasks: ['jade']
       css:
-        files: ['sass/*.sass']
+        files: [pd+'sass/*.sass']
         tasks: ['sass']
 
     grunt.loadNpmTasks 'grunt-contrib-sass'

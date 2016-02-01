@@ -1,10 +1,8 @@
 #!/usr/bin/env node
 
-console.log(process.argv);
 
-console.log(process.cwd());
+global.p_dir=process.cwd();
 var grunt_file = __dirname + '/Gruntfile.coffee';
 process.argv.push('--gruntfile=' + grunt_file);
 var grunt = require("grunt");
 grunt.cli();
-console.log("test");

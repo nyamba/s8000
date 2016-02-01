@@ -1,6 +1,6 @@
 # Server 8000
 
-Simple server which based Gruntjs[1] and packeged with [Sass][2], [Jade][3], Livereload, [Watch][4] tasks.
+Simple server which based [Gruntjs][1] and packeged with [Sass][2], [Jade][3], Livereload, [Watch][4] tasks.
 
 Application directory structure:
 
